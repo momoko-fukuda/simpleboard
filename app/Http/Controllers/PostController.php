@@ -37,6 +37,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // バリエーション（空のままデータを送らないように設定。）
+        $request->validate([
+            'title'=>'required',
+            'content'=>'required',
+            ]);
+        
+        
         $post = new Post();
         $post->title = $request->input('title');
         $post->content=$request->input('content');
@@ -64,6 +71,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+
         return view('posts.edit', compact('post'));
     }
 
@@ -76,6 +84,13 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        
+        // バリエーション
+            $request->validate([
+                'title'=>'required',
+                'content'=>'required',
+            ]);
+        
         $post->title=$request->input('title');
         $post->content=$request->input('content');
         $post->save();
@@ -97,8 +112,3 @@ class PostController extends Controller
     }
 }
 
-// $post = new Post();
-// $post->title = $request->input('title');
-// $post->content = $request->input('content');
-// $post->save();
-// return redirect()->route('posts.show', ['id'=> $post->id])->with('message', 'Post was successfully created.');
