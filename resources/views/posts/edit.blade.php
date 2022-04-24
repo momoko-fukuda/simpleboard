@@ -1,3 +1,10 @@
+@extends('layouts.layouts')
+
+@section('title', 'Simple Board')
+
+
+@section('content')
+
 <from method="POST" action = "/posts/{{$post->id}}">
     {{csrf_field()}}
     <input type="hidden" name="_method" value="PUT">
@@ -6,3 +13,5 @@
     <input type="submit">
 
 </from>
+
+@endsection

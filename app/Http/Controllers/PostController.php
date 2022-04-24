@@ -16,7 +16,7 @@ class PostController extends Controller
     {
        $posts = Post::all();
        
-        return view('posts.index');
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -97,8 +97,8 @@ class PostController extends Controller
     }
 }
 
-$post = new Post();
-$post->title = $request->input('title');
-$post->content = $request->input('content');
-$post->save();
-return redirect()->route('posts.show', ['id'=> $post->id])->with('message', 'Post was successfully created.');
+// $post = new Post();
+// $post->title = $request->input('title');
+// $post->content = $request->input('content');
+// $post->save();
+// return redirect()->route('posts.show', ['id'=> $post->id])->with('message', 'Post was successfully created.');
