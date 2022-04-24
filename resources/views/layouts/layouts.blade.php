@@ -12,7 +12,12 @@
         @component('components.header')
         @endcomponent
         
-        <div class="container">
+        <div class="container pt-5 pb-5">
+            
+            <!--flashメッセージのコンポーネント化-->
+            @component('components.flash')
+            @endcomponent
+            
             <!--↓ここがページごとに変わるということ-->
             @yield('content')
         </div>

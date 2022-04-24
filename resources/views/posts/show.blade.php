@@ -8,9 +8,10 @@
 
 @section('content')
 
-@if(session('message'))
-    {{ session('message') }}
-@endif
+<!--flashメッセージ-->
+<!--@if(session('message'))-->
+<!--    {{ session('message') }}-->
+<!--@endif-->
 
 
 <!--{{ $post-> title}}-->

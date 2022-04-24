@@ -11,10 +11,10 @@
 
 <!--@yield('content')の内容を変更する-->
 @section('content')
-
-    @if(session('message'))
-        {{ session('message')}}
-    @endif
+    <!--flashメッセージ-->
+    <!--@if(session('message'))-->
+    <!--    {{ session('message')}}-->
+    <!--@endif-->
 
 <h1>Posts</h1>
 

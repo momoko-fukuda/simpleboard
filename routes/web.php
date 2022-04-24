@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// PostControllerのindexアクション
+Route::get('/', 'PostController@index');
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::resource('posts', 'PostController');
 
